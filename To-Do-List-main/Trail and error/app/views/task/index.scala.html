@@ -1,0 +1,90 @@
+@(tasks: List[Task], taskForm: Form[models.Task])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@import helper._
+
+@main(" ") {
+    <head>
+        <h1> TO-DO LIST</h1>
+        <title>Table 03</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <link  href="@routes.Assets.versioned("images/check.png")" rel="icon" >
+        <link  href="@routes.Assets.versioned("stylesheets/stylez.css")" rel="stylesheet" >
+    </head>
+
+    <div class="container">
+        <div class="row justify-content-center">
+    <div class="row">
+
+        <div class="col-md-12-mine">
+
+            <h4 >There are currently: @tasks.size task(s)</h4> </div>
+    </div>
+    </div>
+    </div>
+          <!--  <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center mb-4">Create Your Domain Name</h4>
+                    <div class="table-wrap"> -->
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+
+    <div class="row">
+ <div class="col-md-12">
+     <div class="table-wrap">
+    <table class="table">
+        <thead class="thead-primary">
+        <tr>
+
+          <th  style="color: #37517e;" >ID</th>
+          <th scope="col" style="color: #37517e;">Name</th>
+          <th scope="col" style="color: #37517e;">Comments</th>
+          <th scope="col" style="color: #37517e;">Completed</th>
+          <th scope="col" style="color: #37517e;">Edit Action</th>
+            <th scope="col" style="color: #37517e;">Delete Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @tasks.map { task =>
+            <tr>
+
+                <td >@task.id</td>
+                <td>@task.name</td>
+                <td>@task.comments</td>
+                <td>@task.completed</td>
+                <td>
+                  @form(routes.TaskController.edit(task.id.getOrElse(0))) {
+                      <div><input type="submit" value="Edit" class="buttongpt"> </div>
+                  } </td>
+                <td>
+                  @form(routes.TaskController.delete(task.id.getOrElse(0))) {
+                      <input type="submit" value="Delete" class="buttongpt-del">
+                  } </td>
+
+            </tr>
+        }
+      </tbody>
+    </table>
+ </div>
+        </div>
+    </div>
+        </div>
+            </div>
+
+
+
+    <h2 class="col-md-11-mine">Add a new task</h2>
+
+    @form(routes.TaskController.create) {
+        @inputText(taskForm("name"), '_label -> "Task Name", '_showConstraints -> false)
+        @inputText(taskForm("comments"), '_label -> "Comments")
+        @checkbox(taskForm("completed"), '_label -> "Completed ?", '_help -> "")
+        <input type="submit" value="Create" class="Createbuttongpt">
+    }
+
+}

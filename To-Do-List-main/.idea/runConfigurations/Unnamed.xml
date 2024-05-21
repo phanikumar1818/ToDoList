@@ -1,0 +1,30 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="Play2FrameworkRunConfigurations" factoryName="Play 2 App" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <module name="To-Do-List-main" />
+    <option name="allowRunningInParallel" value="true" />
+    <option name="enableSbtGlobalPlugins" value="false" />
+    <option name="play2EnvVariables">
+      <map />
+    </option>
+    <option name="play2IsNonDefaultInstallDirUsed" value="true" />
+    <option name="play2JpdaPort" value="9999" />
+    <option name="play2JvmOptions">
+      <array>
+        <option value="-Xms512M" />
+        <option value="-Xmx1024M" />
+        <option value="-Xss1M" />
+      </array>
+    </option>
+    <option name="play2NeedOpenInBrowser" value="true" />
+    <option name="play2NonDefaultInstallDir" value="" />
+    <option name="play2OpenUrl" value="http://localhost:8000" />
+    <option name="play2isAutoReloadEnabled" value="true" />
+    <option name="projectPathOnTarget" />
+    <option name="selectedOptions">
+      <list />
+    </option>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

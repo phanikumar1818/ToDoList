@@ -1,0 +1,21 @@
+@(id: Long, taskForm: Form[models.Task])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@import helper._
+
+@main("Edit Task") {
+  <head>  <link  href="@routes.Assets.versioned("images/check.png")" rel="icon" > </head>
+
+    <h2 class="col-md-10-mine">Edit Task</h2>
+
+  @form(routes.TaskController.update(id)) {
+
+      @inputText(taskForm("name"), '_label -> "Task Name", '_showConstraints -> false)
+      @inputText(taskForm("comments"), '_label -> "Comments", '_showConstraints -> false)
+
+      @checkbox(taskForm("completed"), '_label -> "Completed?", '_showConstraints -> false)
+
+      <input type="submit" value="Update" class="buttongpt">
+
+  }
+
+}

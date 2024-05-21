@@ -1,0 +1,106 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @* Here's where we render the page title `String`. *@
+        <title>@title</title>
+
+        <link href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")" rel="stylesheet">
+        <style> /* copied from bootstrap-starter template */
+        body { padding-top: 50px; }
+         .help-inline  { color:#953333!important; }
+         input:out-of-range { border:2px solid red; }
+        </style>
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+          <!-- Template Head files here -->
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("public/images/favicon.png")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/hero-img.png")">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheets">
+
+
+    <link href="@routes.Assets.versioned("vendor/aos/aos.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap-icons/bootstrap-icons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/boxicons/css/boxicons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/glightbox/css/glightbox.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/remixicon/remixicon.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/swiper/swiper-bundle.min.css")" rel="stylesheet">
+
+
+        <!-- Template Main CSS File -->
+    <link href="@routes.Assets.versioned("stylesheets/style.css")" rel="stylesheet">
+    <link  href="@routes.Assets.versioned("images/check.png")" rel="icon" >
+    </head>
+
+    <body>
+            <header  id="hero1" class="fixed-top align-items-center ">
+
+
+                <nav id="navbar" class="navbar">
+                    <div class="container d-flex align-items-center">
+                    <ul>
+
+                    <li><a class="getstarted scrollto" href="#">TO-DO LIST</a></li>
+                        <li><a class="nav-link scrollto active" href="#">Tasks</a></li>
+                        <li><a class="nav-link scrollto " href="/team">Team</a></li>
+
+                        <li><a class="nav-link scrollto" href="/contact">Contact</a></li></ul>
+
+
+
+
+
+                    </div>
+                    <a class="navbar-brand"href="/"> Logout </a>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                <!-- navbar -->
+                </nav>
+            </header>
+
+
+     <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Todo List</a>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Tasks</a>
+            </li>
+          </ul>
+        </div>
+       <a class="navbar-brand"href="http://localhost:7000/users/login"> Logout </a>
+      </nav> -->
+        <section>
+      <div class="container">
+        <div class="starter-template">
+          <h1>@title</h1>
+          <div class="lead">
+              @content
+          </div>
+        </div>
+      </div>  <!-- /.container -->
+        </section>
+
+      <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+      <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+
+    </body>
+</html>

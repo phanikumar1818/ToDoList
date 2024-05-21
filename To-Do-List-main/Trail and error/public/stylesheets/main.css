@@ -1,0 +1,210 @@
+input[type=text], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-right: 150px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    display: inline-block;
+  }
+
+  #user-login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin: 12px 0;
+    margin-left: 50px;
+    padding: 12px 20px;
+
+
+  }
+
+  h1{
+    text-align: center;
+    margin-right: 80px;
+  }
+
+  .editBtn{
+    background-color: #37517e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    display: inline-block;
+  }
+
+  .deleteBtn{
+    background-color: #37517e;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    display: inline-block;
+  }
+
+  .createBtn{
+    background-color: #37517e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+  }
+
+/* Button Style */
+.buttongpt {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #3498db;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.buttongpt-del {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #0c3c53;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #0c3c53;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  color: #fff;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.Createbuttongpt {
+  display: inline-block;
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #37517e;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #37517e;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  color: #fff;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+#hero .center {
+  text-align: center;
+  margin-top: 50px;
+  margin-right: 180px;
+  /* Optional: Add margin to position the button */
+}
+
+button {
+    background-color: white; /* Change the button background color to blue */
+    color: white; /* Set text color to contrast with the background */
+    /* Additional styles for the button if needed */
+  }
+  /* Adjust this value to move the button to the left */
+  /* Additional styles for the button if needed */
+.btn-get-started-mine {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #fff;
+  background: #47b2e4;
+  margin-right: 200px;
+}
+
+.center-for-TODO {
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 200px;
+}
+#hero1 {
+  width: 100%;
+  height: 10vh;
+  background: #37517e;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+#header1 {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+.col-md-12-mine {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-top: 40px;
+  margin-left: 20px;
+}
+
+.col-md-11-mine {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 30px;
+
+}
+
+.col-md-10-mine {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+}
+
+.title-in-nav{
+  padding-bottom: 70px;
+}

@@ -1,0 +1,234 @@
+@(
+    form1: Form[models.User],
+    postUrl: Call
+)(implicit request: MessagesRequestHeader)
+
+@import helper._
+@import play.api.test.CSRFTokenHelper._
+@import play.filters.csrf.CSRF
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheets">
+
+        <!-- Vendor CSS Files -->
+    <link href="@routes.Assets.versioned("vendor/aos/aos.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap-icons/bootstrap-icons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/boxicons/css/boxicons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/glightbox/css/glightbox.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/remixicon/remixicon.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/swiper/swiper-bundle.min.css")" rel="stylesheet">
+
+
+
+        <!-- Template Main CSS File -->
+    <link href="@routes.Assets.versioned("stylesheets/style.css")" rel="stylesheet">
+            <!--Template two head from here -->
+    <link  href="@routes.Assets.versioned("images/check.png")" rel="icon" >
+        <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+        <!--===============================================================================================-->
+    <link  href="@routes.Assets.versioned("vendor2/bootstrap/css/bootstrap.css")" rel="stylesheet" >
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned( "fonts/font-awesome-4.7.0/css/font-awesome.min.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("fonts/iconic/css/material-design-iconic-font.min.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link    href="@routes.Assets.versioned("vendor2/animate/animate.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/css-hamburgers/hamburgers.min.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/animsition/css/animsition.min.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link    href="@routes.Assets.versioned("vendor2/select2/select2.min.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/daterangepicker/daterangepicker.css")" rel="stylesheet">
+        <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("stylesheets/util.css")" rel="stylesheet">
+    <link   href="@routes.Assets.versioned("stylesheets/maintwo.css")" rel="stylesheet">
+</head>
+
+
+
+<body id="user-login" >
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+            <nav id="navbar" class="navbar">
+                <li><a class="getstarted scrollto" href="#">WELCOME !</a></li> </nav>
+
+                <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="/about">About</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+
+    <section id="hero"  class="d-flex align-items-center">
+<div id="content" class="container">
+
+        <div id="user-login-form" class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                <div class="limiter">
+                    <div >
+
+                        <div class="wrap-login100" >
+
+
+
+                                <span class="login100-form-title p-b-26">
+						To-Do List
+                                </span>
+
+               <!-- <h1 class="center">To-Do List</h1> -->
+
+        @request.flash.data.map{ case (name, value) =>
+            <div>@name: @value</div>
+        }
+
+        @* Global errors are not tied to any particular form field *@
+        @if(form1.hasGlobalErrors) {
+            @form1.globalErrors.map { error: FormError =>
+                <div>
+                    Error: @error.key: @error.message
+                </div>
+            }
+        }
+
+        @helper.form(postUrl, 'id -> "user-login-form") {
+
+        @helper.CSRF.formField
+
+        @helper.inputText(
+            form1("username"),
+            '_label -> "Username",
+            'placeholder -> "username",
+            'id -> "username",
+            'size -> 60,
+            '_showConstraints -> false
+        )
+
+        @helper.inputPassword(
+            form1("password"),
+            '_label -> "Password",
+            'placeholder -> "password",
+            'id -> "password",
+            'size -> 60,
+            '_showConstraints -> false
+        )
+      
+        <!--<button  class="btn-get-started-mine scrollto" >Login/Register</button> -->
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+            </div>
+       
+        }
+
+    </div>
+                    </div>
+                </div>
+
+</div>
+</div>
+</div>
+    </section>
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Team - Scala</h3>
+                        <p>
+                                USC 1st floor <br>
+                            District of Columbia, DC 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>College:</strong> The George Washington<br>
+                            </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/about" id="aboutBtn">About us</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Get in touch with us</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                        &copy; Copyright <strong><span>Team-Scala</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+    <div id="preloaded"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+    <script src="@routes.Assets.versioned("javascripts/script.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/aos/aos.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/bootstrap/js/bootstrap.bundle.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/glightbox/js/glightbox.min.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/isotope-layout/isotope.pkgd.min.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/swiper/swiper-bundle.min.js")"></script>
+    <script src="@routes.Assets.versioned("vendor/waypoints/noframework.waypoints.js")"></script>
+    <script src="@routes.Assets.versioned("javascripts/script.js")"></script>
+
+
+        <!-- Template Main JS File -->
+    <script src="@routes.Assets.versioned("js/main.js")"></script>
+
+
+</body>
+</html>
+
+

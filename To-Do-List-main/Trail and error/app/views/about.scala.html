@@ -1,0 +1,186 @@
+@()
+
+@import helper._
+@import play.api.test.CSRFTokenHelper._
+@import play.filters.csrf.CSRF
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheets">
+
+    <!-- Vendor CSS Files -->
+    <link href="@routes.Assets.versioned("vendor/aos/aos.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/bootstrap-icons/bootstrap-icons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/boxicons/css/boxicons.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/glightbox/css/glightbox.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/remixicon/remixicon.css")" rel="stylesheet">
+
+    <link href="@routes.Assets.versioned("vendor/swiper/swiper-bundle.min.css")" rel="stylesheet">
+
+
+
+    <!-- Template Main CSS File -->
+    <link href="@routes.Assets.versioned("stylesheets/style.css")" rel="stylesheet">
+    <!--Template two head from here -->
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link  href="@routes.Assets.versioned("vendor2/bootstrap/css/bootstrap.css")" rel="stylesheet" >
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned( "fonts/font-awesome-4.7.0/css/font-awesome.min.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("fonts/iconic/css/material-design-iconic-font.min.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link    href="@routes.Assets.versioned("vendor2/animate/animate.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/css-hamburgers/hamburgers.min.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/animsition/css/animsition.min.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link    href="@routes.Assets.versioned("vendor2/select2/select2.min.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("vendor2/daterangepicker/daterangepicker.css")" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link   href="@routes.Assets.versioned("stylesheets/util.css")" rel="stylesheet">
+    <link   href="@routes.Assets.versioned("stylesheets/maintwo.css")" rel="stylesheet">
+    <link  href="@routes.Assets.versioned("images/check.png")" rel="icon" >
+</head>
+
+
+
+<body id="user-login" >
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+        <nav id="navbar" class="navbar">
+            <li><a class="getstarted scrollto" href="#">WELCOME !</a></li> </nav>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto " href="/">Home</a></li>
+                <li><a class="nav-link scrollto" href="/team">Team</a></li>
+                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                <li><a class="nav-link scrollto active" href="#">About</a></li>
+
+
+
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+    </div>
+</header>
+
+<section id="hero"  class="d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                <h1 class="title-in-nav">ABOUT</h1>
+                <p style="color: white;" class="row-cols-auto">
+                    Welcome to our To-Do List application! We created this platform to simplify task management and help individuals stay organized in their daily lives. Our aim is to provide an intuitive interface where users can effortlessly add, edit, and delete tasks, ensuring a seamless experience. Whether it's keeping track of personal goals, work assignments, or daily chores, our To-Do List app is designed to make task management efficient and stress-free. We're dedicated to continuously improving our app to meet your needs and enhance productivity. Thank you for choosing our platform to streamline your tasks!</p>
+
+                </div>
+
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <img src="@routes.Assets.versioned("images/skills.png")" class="img-fluid animated" alt="">
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Team - Scala</h3>
+                    <p>
+                        USC 1st floor <br>
+                        District of Columbia, DC 535022<br>
+                        United States <br><br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>College:</strong> The George Washington<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Social Networks</h4>
+                    <p>Get in touch with us</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Team-Scala</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer>
+<div id="preloaded"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="@routes.Assets.versioned("javascripts/script.js")"></script>
+<script src="@routes.Assets.versioned("vendor/aos/aos.js")"></script>
+<script src="@routes.Assets.versioned("vendor/bootstrap/js/bootstrap.bundle.js")"></script>
+<script src="@routes.Assets.versioned("vendor/glightbox/js/glightbox.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/isotope-layout/isotope.pkgd.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/swiper/swiper-bundle.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/waypoints/noframework.waypoints.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/script.js")"></script>
+
+
+<!-- Template Main JS File -->
+<script src="@routes.Assets.versioned("js/main.js")"></script>
+
+
+</body>
+</html>
+
+
